@@ -50,11 +50,11 @@ public class Main {
 
     /** Функция, проверяющая является ли строка допустимым шестнадцатеричным кодом **/
     public static boolean isValidHexCode(String string) {
-        String HEX = "#0123456789abcdefABCDEF";
-        for (char c : string.toCharArray()) {
+        String HEX = "0123456789abcdefABCDEF";
+        for (char c : string.substring(1).toCharArray()) {
             if (!HEX.contains(c + "")) return false;
         }
-        return string.startsWith("#") && string.length() == 7;
+        return string.startsWith("#") && string.length() == 7 ;
     }
 
     /** Функция, определяющая содержат ли два массива равное количество уникальных значений **/
